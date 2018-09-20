@@ -1,5 +1,6 @@
 package net.pandazooka.maplab2;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -28,21 +29,35 @@ public class MainActivity extends AppCompatActivity {
         password = (EditText)findViewById(R.id.password);
 
         btnUsr.setOnClickListener(new View.OnClickListener(){
+            @Override
             public void onClick(View v) {
-                btnUsr.setText(userName.getText());
+                Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+                intent.putExtra("username", userName.getText().toString());
+
+                startActivity(intent);
             }
         });
 
         btnPwd.setOnClickListener(new View.OnClickListener(){
+            @Override
             public void onClick(View v) {
-                btnPwd.setText(password.getText());
+                Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+                intent.putExtra("password", password.getText().toString());
+
+                startActivity(intent);
             }
         });
 
         btnUsrPwd.setOnClickListener(new View.OnClickListener(){
+            @Override
             public void onClick(View v) {
-                String UsrPwd = userName.getText() + "-" + password.getText();
-                btnUsrPwd.setText(UsrPwd);
+                Intent intent = new Intent(MainActivity.this, DisplayActivity.class);
+                intent.putExtra("username", userName.getText().toString());
+                intent.putExtra("password", password.getText().toString());
+
+                startActivity(intent);
+                //String UsrPwd = userName.getText() + "-" + password.getText();
+                //btnUsrPwd.setText(UsrPwd);
             }
         });
     }
