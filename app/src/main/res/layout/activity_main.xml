@@ -80,7 +80,7 @@
             android:text="@string/username"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/mag"/>
+            android:textColor="@color/red"/>
 
         <Button
             android:id="@+id/btnPwd"
@@ -90,7 +90,7 @@
             android:text="@string/password"
             android:textSize="30sp"
             android:textStyle="bold"
-            android:textColor="@color/grn"/>
+            android:textColor="@color/red"/>
 
         <Button
             android:id="@+id/btnUsrPwd"
